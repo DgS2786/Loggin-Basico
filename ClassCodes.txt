@@ -1,0 +1,264 @@
+/*import React, {useState} from "react";
+import { StyleSheet, Text, TextInput, View, Image, Button } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import Greeting from "./Greeting"
+
+function Contador()
+{
+  const [numero, setNumero] = useState(0);
+
+return (
+  <View
+  style={{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+  }
+  }>
+    <Text>El numero es: {numero}</Text>
+    <Button title= "Incrementar"
+    onPress={() => setNumero(numero + 1)}
+    />
+    <Button title= "Decrementar"
+    onPress={() => setNumero(numero - 1)}
+    />
+  </View>
+)}
+
+export default Contador;
+*/
+/*
+//Función de formato
+const getFullName = (firstName, secondName, thirdName) => {
+  return firstname + ' ' + secondName + ' ' + thirdName + ' '
+}
+
+//Función que hace uso de otra para dar formato e imprimir
+const Cat = () => {
+  const name = 'Put0';
+  return <Text> Web0s {name} Hello {getFullName('Rum', 'Tum', 'Tugger')} </Text>
+};
+*/
+
+/*
+//Input con Estilo Personalizado
+const Cat2 = () => {
+  return (<View>
+    <Text> Hello, I am...</Text>
+    <TextInput
+      style ={{
+        height: 40,
+        borderColor : 'gray',
+        borderWith :1,
+      }}
+      placeholder="Name me!"
+    />
+  </View>)
+}
+
+// Reutilización de componente
+const Cafe = () =>{
+  return(
+    <View>
+      <Text>Welcome!</Text>
+      <Cat />
+      <Cat />
+      <Cat />
+    </View>
+  )
+}
+
+*/
+
+/*
+//Centrar Elementos
+const YourApp = () => {
+  return (
+    <View style={{
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center'
+    }}>
+      <Text>Hello</Text>
+    </View>
+  )
+}
+
+// Exportar componente Principal 
+export default YourApp;*/
+
+/*
+export default function App(){
+  return(
+    <View style={styles.container}>
+      <View style={[styles.box, {backgroundColor: '#f69e0b',flex: 1}]}></View>
+      <View style={[styles.box, {backgroundColor: '#3157ffff',flex: 1}]}>
+        <Text>Hello</Text>
+      </View>
+      <View style={[styles.box, {backgroundColor: '#8b0abaff',flex: 1}]}></View>
+  
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems:'stretch',
+    backgroundColor: 'pink',
+  },
+  box: {
+    height: 100,
+  }
+}) */
+
+/*
+const Cat = props => {
+  return (
+    <View>
+      <Text>Hello, I am {props.name}</Text>
+    </View>
+  )
+}
+
+const Cafe = () => {
+  return (
+    <View>
+      <Cat name="Web0s"/>
+      <Cat name="puto"/>
+      <Cat name=":D"/>
+      <Image source={require('./assets/logo.png')}  style={{width:100, height:100}}/> 
+    </View>
+  )
+}
+
+export default Cafe; */
+
+/*
+const App = () => {
+  return (
+    <View>
+      <Greeting name="Alice" message="Welcome to our app!"/>
+      <Greeting name="Bob" message="Have a great web0s puto!"/>
+    </View>
+  )
+}
+
+export default App; 
+*/
+
+// App.js
+// App.js
+
+/*
+import { View, Text, Button } from 'react-native';
+import React, { useState } from 'react';
+
+const Cat = props =>{
+  const [isHungry,setIsHungry]=useState(true);
+
+  return(
+    <View
+    style={{
+      flex: 1,
+      justifyContent:'center',
+      alignItems:'center',
+    }}>
+  
+  <Text>
+    I am {props.name}, and I am {isHungry ? 'hungry' : 'full'}!
+  </Text>
+  <Button onPress={()=>{
+    setIsHungry(false);
+  }}
+  disabled={!isHungry}
+  title={isHungry ? 'give me some food, please!': 'thanks'}
+  />
+  </View>
+  );
+};
+
+const Cafe = () => {
+  return (
+    <>
+    <Cat name="Webos"/>
+    <Cat name="Spot"/>
+    </>
+  )
+}
+
+export default Cafe;
+*/
+
+/*
+import { StyleSheet,SafeAreaView,TextInput } from "react-native";
+import { useState } from "react";
+
+export default function App(){
+  
+  const [message,setMessage] = useState("");
+  return (
+    <SafeAreaView style={styles.container}>
+      <TextInput
+      placeholder="Enter message here"
+      value={message}
+      onChangeText={(text) => setMessage(text)}
+      style={styles.input}
+      onSubmitEditing={() => alert(message)}
+      />
+    </SafeAreaView>
+  )
+}
+
+const styles = StyleSheet.create({
+  container:{
+    flex: 1,
+    backgroundColor:"#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  input:{
+    fontSize: 20,
+    color: "#228B22",
+    fontWeight:"bold",
+  }
+})}
+*/
+
+import React, { useState } from 'react';
+import { View, Text, Button, StyleSheet } from 'react-native';
+
+const App = () => {
+  console.log('Rendering App');
+
+  const [count, setCount] = useState(0);
+  const [countTen, setCountTen] = useState(0);
+  const [countHund, setCountHund] = useState(0);
+
+  const handleButtonClickListener = () => {
+    setCount(count + 1);
+    setCountTen(countTen + 10);
+    setCountHund(countHund + 100);
+  };
+
+  return (
+    <View style={styles.main}>
+      <Text>Sample App</Text>
+      <Button onPress={handleButtonClickListener} title="Click Me" />
+      <Text>Count One: {count}</Text>
+      <Text>Count Ten: {countTen}</Text>
+      <Text>Count Hund: {countHund}</Text>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  main: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+});
+
+export default App;
